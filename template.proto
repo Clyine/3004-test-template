@@ -1,23 +1,32 @@
+
+//Once done run the below command to generate stubs in the same folder
+//If you change the filename, the server code will have to be changed as well
 //py -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. template.proto
+
+//Once generate, proceed to create server code
 
 syntax = "proto3";
 
 service Template {
 
     //Simple call (Http GET-like)
+    //Change function name
+    //Change input class name
+    //Change return class name
+    //Add more if necessary
     rpc apiEndpoint1(inputObj) returns (resultObj) {}
-
-    //Returns an object dynamically
-    rpc apiEndpoint2(inputObj) returns (stream resultObj) {}
-
 }
 
+//Input class
 message inputObj {
+    //Change names and data type accordingly. Initial value is arbitary.
     int32 params1 = 1;
     int32 params2 = 2;
 }
 
+//Return Class
 message resultObj {
+    //Change names and data type accordingly. Initial value is arbitary.
     int32 value1 = 1;
     int32 value2 = 2;
 }
