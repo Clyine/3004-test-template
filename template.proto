@@ -1,0 +1,23 @@
+//py -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. template.proto
+
+syntax = "proto3";
+
+service Template {
+
+    //Simple call (Http GET-like)
+    rpc apiEndpoint1(inputObj) returns (resultObj) {}
+
+    //Returns an object dynamically
+    rpc apiEndpoint2(inputObj) returns (stream resultObj) {}
+
+}
+
+message inputObj {
+    int32 params1 = 1;
+    int32 params2 = 2;
+}
+
+message resultObj {
+    int32 value1 = 1;
+    int32 value2 = 2;
+}
