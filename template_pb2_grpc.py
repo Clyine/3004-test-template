@@ -19,11 +19,6 @@ class TemplateStub(object):
                 request_serializer=template__pb2.inputObj.SerializeToString,
                 response_deserializer=template__pb2.resultObj.FromString,
                 )
-        self.apiEndpoint2 = channel.unary_stream(
-                '/Template/apiEndpoint2',
-                request_serializer=template__pb2.inputObj.SerializeToString,
-                response_deserializer=template__pb2.resultObj.FromString,
-                )
 
 
 class TemplateServicer(object):
@@ -31,13 +26,10 @@ class TemplateServicer(object):
 
     def apiEndpoint1(self, request, context):
         """Simple call (Http GET-like)
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def apiEndpoint2(self, request, context):
-        """Returns an object dynamically
+        Change function name
+        Change input class name
+        Change return class name
+        Add more if necessary
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -48,11 +40,6 @@ def add_TemplateServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'apiEndpoint1': grpc.unary_unary_rpc_method_handler(
                     servicer.apiEndpoint1,
-                    request_deserializer=template__pb2.inputObj.FromString,
-                    response_serializer=template__pb2.resultObj.SerializeToString,
-            ),
-            'apiEndpoint2': grpc.unary_stream_rpc_method_handler(
-                    servicer.apiEndpoint2,
                     request_deserializer=template__pb2.inputObj.FromString,
                     response_serializer=template__pb2.resultObj.SerializeToString,
             ),
@@ -78,23 +65,6 @@ class Template(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/Template/apiEndpoint1',
-            template__pb2.inputObj.SerializeToString,
-            template__pb2.resultObj.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def apiEndpoint2(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/Template/apiEndpoint2',
             template__pb2.inputObj.SerializeToString,
             template__pb2.resultObj.FromString,
             options, channel_credentials,

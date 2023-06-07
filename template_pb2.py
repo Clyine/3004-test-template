@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0etemplate.proto\",\n\x08inputObj\x12\x0f\n\x07params1\x18\x01 \x01(\x05\x12\x0f\n\x07params2\x18\x02 \x01(\x05\"+\n\tresultObj\x12\x0e\n\x06value1\x18\x01 \x01(\x05\x12\x0e\n\x06value2\x18\x02 \x01(\x05\x32^\n\x08Template\x12\'\n\x0c\x61piEndpoint1\x12\t.inputObj\x1a\n.resultObj\"\x00\x12)\n\x0c\x61piEndpoint2\x12\t.inputObj\x1a\n.resultObj\"\x00\x30\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0etemplate.proto\",\n\x08inputObj\x12\x0f\n\x07params1\x18\x01 \x01(\x05\x12\x0f\n\x07params2\x18\x02 \x01(\x05\"+\n\tresultObj\x12\x0e\n\x06value1\x18\x01 \x01(\x05\x12\x0e\n\x06value2\x18\x02 \x01(\x05\x32\x33\n\x08Template\x12\'\n\x0c\x61piEndpoint1\x12\t.inputObj\x1a\n.resultObj\"\x00\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'template_pb2', globals())
@@ -25,5 +25,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _RESULTOBJ._serialized_start=64
   _RESULTOBJ._serialized_end=107
   _TEMPLATE._serialized_start=109
-  _TEMPLATE._serialized_end=203
+  _TEMPLATE._serialized_end=160
 # @@protoc_insertion_point(module_scope)

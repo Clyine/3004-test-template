@@ -1,0 +1,33 @@
+
+//Once done run the below command to generate stubs in the same folder
+//If you change the filename, the server code will have to be changed as well
+//py -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. template.proto
+
+//Once generate, proceed to create server code
+
+syntax = "proto3";
+
+service System {
+    rpc doList(item) returns (result) {}
+    rpc doBid(bid) returns (result) {}
+    rpc doQuery(item) returns (result) {}
+}
+
+
+message item {
+    string itemName = 1;
+}
+
+message bid {
+    string itemName = 1;
+    string bidder = 2;
+    int32 price = 3;
+}
+
+message result {
+    string text = 1;
+}
+
+message systemList {
+    repeated bid bidlist = 1;
+}
